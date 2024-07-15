@@ -20,7 +20,7 @@ class LauncherViewModel : ViewModel() {
     fun dbFetch(context: Context) {
         viewModelScope.launch(Dispatchers.IO) {
             var database: NoteDatabase = DatabaseBuilder.getInstance(context)
-
+            //DbHelper(database).deleteDB()
             var notes = DbHelper(database).readDb()
             Cache.dataNotes = notes
 

@@ -4,6 +4,10 @@ class DbHelper(private val myDb: NoteDatabase) : NoteDao  {
     override fun insertNote(note: Note) {
        myDb.noteDao().insertNote(note)
     }
+    override fun deleteDB() {
+        myDb.noteDao().deleteDB()
+    }
+
 
     override fun readDb(): List<Note> {
         return  myDb.noteDao().readDb()
